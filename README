@@ -1,0 +1,12 @@
+### LinkedNonFictionAuthors
+#
+# A Pode project in two steps to convert marc21slim bibligraphic metadata
+# to RDF semantic records, in order to enrich relationship data on 
+# works and authors
+#
+# in: marc21slim xml
+# out: turtle rdf
+#
+# CONTENT
+# marcslim2rdf.xsl	- an xslt stylesheet to convert xml to turtle (RDF/n3)
+# marc2rdf.rdf		- basic vocabulary for project

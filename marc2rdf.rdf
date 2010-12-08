@@ -1,0 +1,1605 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY www "http://www.bibpode.no/" >
+    <!ENTITY lf "http://www.bibpode.no/lf/" >
+    <!ENTITY terms "http://purl.org/dc/terms/" >
+    <!ENTITY ff "http://www.bibpode.no/ff/" >
+    <!ENTITY ontology3 "http://lexvo.org/ontology#" >
+    <!ENTITY foaf "http://xmlns.com/foaf/0.1/" >
+    <!ENTITY bibo "http://purl.org/ontology/bibo/" >
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY skos2 "http://www.w3.org/2008/05/skos#" >
+    <!ENTITY ontology2 "http://www.lingvoj.org/ontology#" >
+    <!ENTITY core "http://purl.org/vocab/frbr/core#" >
+    <!ENTITY vocabulary "http://www.bibpode.no/vocabulary#" >
+    <!ENTITY ontology "http://www.geonames.org/ontology#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY sublima "http://xmlns.computas.com/sublima#" >
+    <!ENTITY owl2xml "http://www.w3.org/2006/12/owl2-xml#" >
+    <!ENTITY xfoaf "http://www.foafrealm.org/xfoaf/0.1/" >
+    <!ENTITY skos "http://www.w3.org/2004/02/skos/core#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY movie "http://data.linkedmdb.org/resource/movie/" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY ns "http://www.w3.org/2003/06/sw-vocab-status/ns#" >
+    <!ENTITY schema "http://schemas.talis.com/2005/address/schema#" >
+]>
+
+
+<rdf:RDF xmlns="&www;marc2rdf_vocabulary#"
+     xml:base="&www;marc2rdf_vocabulary"
+     xmlns:ns="http://www.w3.org/2003/06/sw-vocab-status/ns#"
+     xmlns:xfoaf="http://www.foafrealm.org/xfoaf/0.1/"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:vocabulary="&www;vocabulary#"
+     xmlns:terms="http://purl.org/dc/terms/"
+     xmlns:www="http://www.bibpode.no/"
+     xmlns:ontology3="http://lexvo.org/ontology#"
+     xmlns:movie="http://data.linkedmdb.org/resource/movie/"
+     xmlns:ontology="http://www.geonames.org/ontology#"
+     xmlns:ontology2="http://www.lingvoj.org/ontology#"
+     xmlns:sublima="http://xmlns.computas.com/sublima#"
+     xmlns:schema="http://schemas.talis.com/2005/address/schema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl2xml="http://www.w3.org/2006/12/owl2-xml#"
+     xmlns:skos2="http://www.w3.org/2008/05/skos#"
+     xmlns:ff="&www;ff/"
+     xmlns:bibo="http://purl.org/ontology/bibo/"
+     xmlns:lf="&www;lf/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:core="http://purl.org/vocab/frbr/core#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#">
+    <owl:Ontology rdf:about=""/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <owl:AnnotationProperty rdf:about="&skos2;scopeNote"/>
+    <owl:AnnotationProperty rdf:about="&ns;term_status"/>
+    <owl:AnnotationProperty rdf:about="&skos2;example"/>
+    <owl:AnnotationProperty rdf:about="&skos2;editorialNote"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://data.linkedmdb.org/resource/movie/genre -->
+
+    <owl:ObjectProperty rdf:about="&movie;genre">
+        <rdfs:range rdf:resource="&movie;film_genre"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/dc/terms/audience -->
+
+    <owl:ObjectProperty rdf:about="&terms;audience">
+        <rdfs:label xml:lang="en-US">Audience</rdfs:label>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;anyURI"
+            >http://purl.org/dc/terms/</rdfs:isDefinedBy>
+        <rdfs:comment xml:lang="en-US"
+            >A class of entity for whom the resource is intended or useful.</rdfs:comment>
+        <rdfs:range rdf:resource="&terms;AgentClass"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/dc/terms/contributor -->
+
+    <owl:ObjectProperty rdf:about="&terms;contributor">
+        <rdfs:label xml:lang="en">Contributor</rdfs:label>
+        <rdfs:label xml:lang="no">Bidragsyter</rdfs:label>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;anyURI"
+            >http://purl.org/dc/terms/</rdfs:isDefinedBy>
+        <rdfs:comment xml:lang="en"
+            >An entity responsible for making contributions to the resource.</rdfs:comment>
+        <skos2:scopeNote xml:lang="en"
+            >Used to link a bibliographic item to one of its contributor: can be an author, an editor, a publisher, etc.</skos2:scopeNote>
+        <rdfs:range rdf:resource="&foaf;Agent"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/dc/terms/creator -->
+
+    <owl:ObjectProperty rdf:about="&terms;creator">
+        <rdfs:label xml:lang="en">Creator</rdfs:label>
+        <rdfs:label xml:lang="no">Opphavsperson</rdfs:label>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;anyURI"
+            >http://purl.org/dc/terms/</rdfs:isDefinedBy>
+        <rdfs:comment xml:lang="en"
+            >An entity primarily responsible for making the resource.</rdfs:comment>
+        <rdfs:comment xml:lang="no"
+            >En enhet som er hovedansvarlig for ressursen.</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="&terms;contributor"/>
+        <rdfs:range rdf:resource="&foaf;Agent"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/dc/terms/format -->
+
+    <owl:ObjectProperty rdf:about="&terms;format">
+        <rdfs:label xml:lang="en">Format</rdfs:label>
+        <rdfs:label xml:lang="no">Format</rdfs:label>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;anyURI"
+            >http://purl.org/dc/terms/</rdfs:isDefinedBy>
+        <skos2:example xml:lang="en"
+            >&lt;dcterms:format&gt;
+   &lt;dcterms:MediaTypeOrExtent&gt;
+     &lt;rdf:value&gt;text/html&lt;/rdf:value&gt;
+     &lt;rdfs:label&gt;HTML&lt;/rdfs:label&gt;
+   &lt;/dcterms:MediaTypeOrExtent&gt;
+ &lt;/dcterms:format&gt;</skos2:example>
+        <rdfs:comment xml:lang="en"
+            >The file format, physical medium, or dimensions of the resource.</rdfs:comment>
+        <skos2:scopeNote xml:lang="en"
+            >Used to describe the format of a bibliographic resource.</skos2:scopeNote>
+        <rdfs:comment xml:lang="no"
+            >Filformatet, den fysiske formen eller st&#248;rrelsen p&#229; ressursen.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/dc/terms/hasPart -->
+
+    <owl:ObjectProperty rdf:about="&terms;hasPart">
+        <rdfs:label xml:lang="en-US">Has Part</rdfs:label>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;anyURI"
+            >http://purl.org/dc/terms/</rdfs:isDefinedBy>
+        <rdfs:comment xml:lang="en-US"
+            >A related resource that is included either physically or logically in the described resource.</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="&terms;relation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/dc/terms/hasVersion -->
+
+    <owl:ObjectProperty rdf:about="&terms;hasVersion">
+        <rdfs:subPropertyOf rdf:resource="&terms;relation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/dc/terms/isPartOf -->
+
+    <owl:ObjectProperty rdf:about="&terms;isPartOf">
+        <rdfs:label xml:lang="en-US">Is Part Of</rdfs:label>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;anyURI"
+            >http://purl.org/dc/terms/</rdfs:isDefinedBy>
+        <rdfs:comment xml:lang="en-US"
+            >A related resource in which the described resource is physically or logically included.</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="&terms;relation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/dc/terms/language -->
+
+    <owl:ObjectProperty rdf:about="&terms;language">
+        <rdfs:label xml:lang="en">Language</rdfs:label>
+        <rdfs:label xml:lang="no">Spr&#229;k</rdfs:label>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;anyURI"
+            >http://purl.org/dc/terms/</rdfs:isDefinedBy>
+        <rdfs:comment xml:lang="en"
+            >A language of the resource.</rdfs:comment>
+        <skos2:scopeNote xml:lang="en"
+            >Used to link a bibliographic resource to the language used to express it.</skos2:scopeNote>
+        <rdfs:comment xml:lang="no"
+            >Ressursens spr&#229;k</rdfs:comment>
+        <rdfs:range rdf:resource="&ontology3;Language"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/dc/terms/publisher -->
+
+    <owl:ObjectProperty rdf:about="&terms;publisher">
+        <rdfs:label xml:lang="en">Publisher</rdfs:label>
+        <rdfs:label xml:lang="no">Utgiver</rdfs:label>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;anyURI"
+            >http://purl.org/dc/terms/</rdfs:isDefinedBy>
+        <rdfs:comment xml:lang="en"
+            >An entity responsible for making the resource available.</rdfs:comment>
+        <skos2:scopeNote xml:lang="en"
+            >Used to link a bibliographic item to its publisher.</skos2:scopeNote>
+        <rdfs:comment xml:lang="no"
+            >En enhet som er ansvarlig for &#229; ha gjort ressursen tilgjengelig.</rdfs:comment>
+        <rdfs:range rdf:resource="&foaf;Agent"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/dc/terms/relation -->
+
+    <owl:ObjectProperty rdf:about="&terms;relation"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/subject -->
+
+    <owl:ObjectProperty rdf:about="&terms;subject">
+        <skos2:scopeNote xml:lang="en"
+            >Used to describe the subject of a bibliographic resource.</skos2:scopeNote>
+        <rdfs:range rdf:resource="&skos;Concept"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/dc/terms/type -->
+
+    <owl:ObjectProperty rdf:about="&terms;type">
+        <rdfs:label xml:lang="en">Type</rdfs:label>
+        <rdfs:label xml:lang="no">Ressurstype</rdfs:label>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;anyURI"
+            >http://purl.org/dc/terms/</rdfs:isDefinedBy>
+        <rdfs:comment xml:lang="en"
+            >The nature or genre of the resource.</rdfs:comment>
+        <rdfs:comment xml:lang="no"
+            >En egenskap ved ressursen eller en betegnelse som beskriver ressursen.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ontology/bibo/director -->
+
+    <owl:ObjectProperty rdf:about="&bibo;director">
+        <rdfs:label>director</rdfs:label>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;anyURI"
+            >http://purl.org/ontology/bibo/</rdfs:isDefinedBy>
+        <ns:term_status>stable</ns:term_status>
+        <rdfs:comment xml:lang="en"
+            >A Film director.</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="&terms;contributor"/>
+        <rdfs:range rdf:resource="&foaf;Agent"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ontology/bibo/editor -->
+
+    <owl:ObjectProperty rdf:about="&bibo;editor">
+        <rdfs:label>editor</rdfs:label>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;anyURI"
+            >http://purl.org/ontology/bibo/</rdfs:isDefinedBy>
+        <ns:term_status>stable</ns:term_status>
+        <rdfs:comment xml:lang="en"
+            >A person having managerial and sometimes policy-making responsibility for the editorial part of a publishing firm or of a newspaper, magazine, or other publication.</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="&terms;contributor"/>
+        <rdfs:range rdf:resource="&foaf;Agent"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&bibo;Collection"/>
+                    <rdf:Description rdf:about="&bibo;Document"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ontology/bibo/performer -->
+
+    <owl:ObjectProperty rdf:about="&bibo;performer">
+        <rdfs:label>performer</rdfs:label>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;anyURI"
+            >http://purl.org/ontology/bibo/</rdfs:isDefinedBy>
+        <ns:term_status>stable</ns:term_status>
+        <rdfs:subPropertyOf rdf:resource="&terms;contributor"/>
+        <rdfs:range rdf:resource="&foaf;Agent"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ontology/bibo/translator -->
+
+    <owl:ObjectProperty rdf:about="&bibo;translator">
+        <rdfs:label>translator</rdfs:label>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;anyURI"
+            >http://purl.org/ontology/bibo/</rdfs:isDefinedBy>
+        <ns:term_status>stable</ns:term_status>
+        <rdfs:comment xml:lang="en"
+            >A person who translates written document from one language to another.</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="&terms;contributor"/>
+        <rdfs:range rdf:resource="&foaf;Agent"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&bibo;Collection"/>
+                    <rdf:Description rdf:about="&bibo;Document"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.bibpode.no/vocabulary#ddk -->
+
+    <owl:ObjectProperty rdf:about="&www;vocabulary#ddk">
+        <rdfs:label xml:lang="en">DDK</rdfs:label>
+        <rdfs:label xml:lang="no">DDK</rdfs:label>
+        <rdfs:comment xml:lang="en"
+            >A DDK classification code describing the contents of a document or of a collection of documents.</rdfs:comment>
+        <rdfs:range rdf:resource="&www;vocabulary#DDKCode"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&bibo;Collection"/>
+                    <rdf:Description rdf:about="&bibo;Document"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.bibpode.no/vocabulary#literaryFormat -->
+
+    <owl:ObjectProperty rdf:about="&www;vocabulary#literaryFormat">
+        <rdfs:label xml:lang="en">Literary format</rdfs:label>
+        <rdfs:label xml:lang="no">Litter&#230;r form</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="&terms;type"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&bibo;Collection"/>
+                    <rdf:Description rdf:about="&bibo;Document"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.bibpode.no/vocabulary#literaryGenre -->
+
+    <owl:ObjectProperty rdf:about="&www;vocabulary#literaryGenre">
+        <rdfs:label xml:lang="en">Literary genre</rdfs:label>
+        <rdfs:label xml:lang="no">Litter&#230;r genre</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="&terms;type"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&bibo;Collection"/>
+                    <rdf:Description rdf:about="&bibo;Document"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.bibpode.no/vocabulary#publicationPlace -->
+
+    <owl:ObjectProperty rdf:about="&www;vocabulary#publicationPlace">
+        <rdfs:label xml:lang="en"
+            >Place of publication</rdfs:label>
+        <rdfs:label xml:lang="no">Utgivelsessted</rdfs:label>
+        <rdfs:comment xml:lang="en"
+            >The geographical location where a document was published.</rdfs:comment>
+        <rdfs:range rdf:resource="&ontology;Feature"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&bibo;Collection"/>
+                    <rdf:Description rdf:about="&bibo;Document"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#broader -->
+
+    <owl:ObjectProperty rdf:about="&skos;broader">
+        <rdfs:range rdf:resource="&skos;Concept"/>
+        <rdfs:domain rdf:resource="&skos;Concept"/>
+        <rdfs:subPropertyOf rdf:resource="&skos;semanticRelation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#narrower -->
+
+    <owl:ObjectProperty rdf:about="&skos;narrower">
+        <rdfs:domain rdf:resource="&skos;Concept"/>
+        <rdfs:range rdf:resource="&skos;Concept"/>
+        <owl:inverseOf rdf:resource="&skos;broader"/>
+        <rdfs:subPropertyOf rdf:resource="&skos;semanticRelation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#semanticRelation -->
+
+    <owl:ObjectProperty rdf:about="&skos;semanticRelation">
+        <rdfs:range rdf:resource="&skos;Concept"/>
+        <rdfs:domain rdf:resource="&skos;Concept"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/focus -->
+
+    <owl:ObjectProperty rdf:about="&foaf;focus">
+        <rdfs:comment
+            >The underlying or &#39;focal&#39; entity associated with some SKOS-described concept.</rdfs:comment>
+        <rdfs:range rdf:resource="&owl;Thing"/>
+        <rdfs:domain rdf:resource="&skos;Concept"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://xmlns.computas.com/sublima#classification -->
+
+    <owl:ObjectProperty rdf:about="&sublima;classification">
+        <rdfs:label xml:lang="en">classification</rdfs:label>
+        <rdfs:label xml:lang="no">klassifikasjon</rdfs:label>
+        <rdfs:comment xml:lang="en"
+            >A classification code associated with a concept.</rdfs:comment>
+        <rdfs:range rdf:resource="&www;vocabulary#ClassifiationCode"/>
+        <rdfs:domain rdf:resource="&skos;Concept"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://data.linkedmdb.org/resource/movie/film_genre_name -->
+
+    <owl:DatatypeProperty rdf:about="&movie;film_genre_name">
+        <rdfs:domain rdf:resource="&movie;film_genre"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/dc/terms/alternative -->
+
+    <owl:DatatypeProperty rdf:about="&terms;alternative">
+        <rdfs:label xml:lang="en-US"
+            >Alternative Title</rdfs:label>
+        <rdfs:label xml:lang="no"
+            >Alternativ tittel</rdfs:label>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;anyURI"
+            >http://purl.org/dc/terms/</rdfs:isDefinedBy>
+        <rdfs:comment xml:lang="en-US"
+            >An alternative name for the resource.</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="&terms;title"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&bibo;Collection"/>
+                    <rdf:Description rdf:about="&bibo;Document"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/dc/terms/date -->
+
+    <owl:DatatypeProperty rdf:about="&terms;date">
+        <rdfs:label xml:lang="en">Date</rdfs:label>
+        <rdfs:label xml:lang="no">Dato</rdfs:label>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;anyURI"
+            >http://purl.org/dc/terms/</rdfs:isDefinedBy>
+        <rdfs:comment xml:lang="en"
+            >A point or period of time associated with an event in the lifecycle of the resource.</rdfs:comment>
+        <skos2:scopeNote xml:lang="en"
+            >Use to link a bibliographic item to the date of an event. Check dcterms:created and other for proper specializations for this property</skos2:scopeNote>
+        <rdfs:comment xml:lang="no"
+            >Et tidspunkt eller en tidsperiode som er knyttet til ressursen.</rdfs:comment>
+        <rdfs:range rdf:resource="&rdfs;Literal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/dc/terms/description -->
+
+    <owl:DatatypeProperty rdf:about="&terms;description">
+        <rdfs:label xml:lang="en">Description</rdfs:label>
+        <rdfs:label xml:lang="no">Sammendrag</rdfs:label>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;anyURI"
+            >http://purl.org/dc/terms/</rdfs:isDefinedBy>
+        <rdfs:comment xml:lang="en"
+            >An account of the resource.</rdfs:comment>
+        <skos2:scopeNote xml:lang="en"
+            >Used to describe a bibliographic resource.</skos2:scopeNote>
+        <rdfs:comment xml:lang="no"
+            >Et sammendrag av ressursen.</rdfs:comment>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/dc/terms/hasVersion -->
+
+    <owl:DatatypeProperty rdf:about="&terms;hasVersion"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/issued -->
+
+    <owl:DatatypeProperty rdf:about="&terms;issued">
+        <rdfs:label xml:lang="en">Issued</rdfs:label>
+        <rdfs:label xml:lang="no">Utgitt</rdfs:label>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;anyURI"
+            >http://purl.org/dc/terms/</rdfs:isDefinedBy>
+        <rdfs:comment xml:lang="en"
+            >Date of formal issuance (e.g., publication) of the resource.</rdfs:comment>
+        <skos2:scopeNote xml:lang="en"
+            >Used to describe the issue date of a bibliographic resource</skos2:scopeNote>
+        <rdfs:comment xml:lang="no"
+            >Datoen for den formelle utsendelsen (dvs. utgivelsen) av ressursen.</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="&terms;date"/>
+        <rdfs:range rdf:resource="&rdfs;Literal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/dc/terms/title -->
+
+    <owl:DatatypeProperty rdf:about="&terms;title">
+        <rdfs:label xml:lang="en-US">Title</rdfs:label>
+        <rdfs:label xml:lang="no">Tittel</rdfs:label>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;anyURI"
+            >http://purl.org/dc/terms/</rdfs:isDefinedBy>
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&bibo;Collection"/>
+                    <rdf:Description rdf:about="&bibo;Document"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/ontology/bibo/edition -->
+
+    <owl:DatatypeProperty rdf:about="&bibo;edition">
+        <rdfs:label xml:lang="en">edition</rdfs:label>
+        <rdfs:label xml:lang="no">utgave</rdfs:label>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;anyURI"
+            >http://purl.org/ontology/bibo/</rdfs:isDefinedBy>
+        <rdfs:comment xml:lang="en"
+            >The name defining a special edition of a document. Normally its a literal value composed of a version number and words.</rdfs:comment>
+        <ns:term_status>stable</ns:term_status>
+        <rdfs:domain rdf:resource="&bibo;Document"/>
+        <rdfs:range rdf:resource="&rdfs;Literal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/ontology/bibo/identifier -->
+
+    <owl:DatatypeProperty rdf:about="&bibo;identifier">
+        <rdfs:range rdf:resource="&rdfs;Literal"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&bibo;Collection"/>
+                    <rdf:Description rdf:about="&bibo;Document"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/ontology/bibo/isbn -->
+
+    <owl:DatatypeProperty rdf:about="&bibo;isbn">
+        <rdfs:subPropertyOf rdf:resource="&bibo;identifier"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/ontology/bibo/isbn10 -->
+
+    <owl:DatatypeProperty rdf:about="&bibo;isbn10">
+        <rdfs:subPropertyOf rdf:resource="&bibo;isbn"/>
+        <rdfs:range rdf:resource="&rdfs;Literal"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&bibo;Collection"/>
+                    <rdf:Description rdf:about="&bibo;Document"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/ontology/bibo/isbn13 -->
+
+    <owl:DatatypeProperty rdf:about="&bibo;isbn13">
+        <rdfs:subPropertyOf rdf:resource="&bibo;isbn"/>
+        <rdfs:range rdf:resource="&rdfs;Literal"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&bibo;Collection"/>
+                    <rdf:Description rdf:about="&bibo;Document"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/ontology/bibo/issn -->
+
+    <owl:DatatypeProperty rdf:about="&bibo;issn">
+        <rdfs:subPropertyOf rdf:resource="&bibo;identifier"/>
+        <rdfs:range rdf:resource="&rdfs;Literal"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&bibo;Collection"/>
+                    <rdf:Description rdf:about="&bibo;Document"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/ontology/bibo/number -->
+
+    <owl:DatatypeProperty rdf:about="&bibo;number">
+        <rdfs:label xml:lang="en">number</rdfs:label>
+        <rdfs:label xml:lang="no">nummer</rdfs:label>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;anyURI"
+            >http://purl.org/ontology/bibo/</rdfs:isDefinedBy>
+        <ns:term_status>stable</ns:term_status>
+        <rdfs:comment xml:lang="en"
+            >A generic item or document number. Not to be confused with issue number.</rdfs:comment>
+        <rdfs:domain rdf:resource="&bibo;Document"/>
+        <rdfs:range rdf:resource="&rdfs;Literal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/ontology/bibo/shortDescription -->
+
+    <owl:DatatypeProperty rdf:about="&bibo;shortDescription">
+        <rdfs:domain rdf:resource="&bibo;Document"/>
+        <rdfs:range rdf:resource="&rdfs;Literal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/ontology/bibo/suffixName -->
+
+    <owl:DatatypeProperty rdf:about="&bibo;suffixName">
+        <rdfs:label xml:lang="en">suffix name</rdfs:label>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;anyURI"
+            >http://purl.org/ontology/bibo/</rdfs:isDefinedBy>
+        <rdfs:comment xml:lang="en"
+            >The suffix of a name</rdfs:comment>
+        <ns:term_status>stable</ns:term_status>
+        <rdfs:range rdf:resource="&rdfs;Literal"/>
+        <rdfs:domain rdf:resource="&foaf;Agent"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/ontology/bibo/uri -->
+
+    <owl:DatatypeProperty rdf:about="&bibo;uri">
+        <rdfs:label xml:lang="en">uri</rdfs:label>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;anyURI"
+            >http://purl.org/ontology/bibo/</rdfs:isDefinedBy>
+        <rdfs:comment xml:lang="en"
+            >Universal Resource Identifier of a document</rdfs:comment>
+        <ns:term_status>stable</ns:term_status>
+        <rdfs:subPropertyOf rdf:resource="&bibo;identifier"/>
+        <rdfs:range rdf:resource="&rdfs;Literal"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&bibo;Collection"/>
+                    <rdf:Description rdf:about="&bibo;Document"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.bibpode.no/vocabulary#bibliographicData -->
+
+    <owl:DatatypeProperty rdf:about="&www;vocabulary#bibliographicData">
+        <rdfs:comment xml:lang="en"
+            >Any bibliographic datatype property</rdfs:comment>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&bibo;Collection"/>
+                    <rdf:Description rdf:about="&bibo;Document"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.bibpode.no/vocabulary#lifespan -->
+
+    <owl:DatatypeProperty rdf:about="&www;vocabulary#lifespan">
+        <rdfs:label xml:lang="en">Lifespan</rdfs:label>
+        <rdfs:label xml:lang="no">Levetid</rdfs:label>
+        <rdfs:comment xml:lang="en"
+            >The lifespan of an Agent</rdfs:comment>
+        <rdfs:range rdf:resource="&rdfs;Literal"/>
+        <rdfs:domain rdf:resource="&foaf;Agent"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.bibpode.no/vocabulary#location -->
+
+    <owl:DatatypeProperty rdf:about="&www;vocabulary#location">
+        <rdfs:label xml:lang="en">Location</rdfs:label>
+        <rdfs:label xml:lang="no">Plassering</rdfs:label>
+        <rdfs:comment xml:lang="en"
+            >Signature describing the physical location of a document or a collection of documents.</rdfs:comment>
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&bibo;Collection"/>
+                    <rdf:Description rdf:about="&bibo;Document"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.bibpode.no/vocabulary#physicalDescription -->
+
+    <owl:DatatypeProperty rdf:about="&www;vocabulary#physicalDescription">
+        <rdfs:label xml:lang="en"
+            >Physical description</rdfs:label>
+        <rdfs:label xml:lang="no"
+            >Fysisk beskrivelse</rdfs:label>
+        <rdfs:comment xml:lang="en"
+            >Description of the physical appearance of a document or of a collection of documents.</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="&www;vocabulary#bibliographicData"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&bibo;Collection"/>
+                    <rdf:Description rdf:about="&bibo;Document"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.bibpode.no/vocabulary#responsibility -->
+
+    <owl:DatatypeProperty rdf:about="&www;vocabulary#responsibility">
+        <rdfs:label xml:lang="en">Responsibility</rdfs:label>
+        <rdfs:label xml:lang="no">Ansvarshavende</rdfs:label>
+        <rdfs:comment xml:lang="en"
+            >A listing of those responsible for a document or for a collection of documents.</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="&www;vocabulary#bibliographicData"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&bibo;Collection"/>
+                    <rdf:Description rdf:about="&bibo;Document"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.bibpode.no/vocabulary#subtitle -->
+
+    <owl:DatatypeProperty rdf:about="&www;vocabulary#subtitle">
+        <rdfs:label xml:lang="en">Subtitle</rdfs:label>
+        <rdfs:label xml:lang="no">Undertittel</rdfs:label>
+        <rdfs:comment xml:lang="en"
+            >The subtitle of a document, or of a collection of a documents.</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="&terms;title"/>
+        <rdfs:subPropertyOf rdf:resource="&www;vocabulary#bibliographicData"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&bibo;Collection"/>
+                    <rdf:Description rdf:about="&bibo;Document"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.bibpode.no/vocabulary#titleNumber -->
+
+    <owl:DatatypeProperty rdf:about="&www;vocabulary#titleNumber">
+        <rdfs:label xml:lang="en">Title number</rdfs:label>
+        <rdfs:label xml:lang="no">Tittelnummer</rdfs:label>
+        <rdfs:comment xml:lang="en"
+            >The ID of a record within a catalogue, as found in MARC controlfield 001.</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="&bibo;identifier"/>
+        <rdfs:range rdf:resource="&xsd;integer"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&bibo;Collection"/>
+                    <rdf:Description rdf:about="&bibo;Document"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.foafrealm.org/xfoaf/0.1/nationality -->
+
+    <owl:DatatypeProperty rdf:about="&xfoaf;nationality">
+        <rdfs:label xml:lang="en">Nationality</rdfs:label>
+        <rdfs:label xml:lang="no">Nasjonalitet</rdfs:label>
+        <rdfs:comment xml:lang="en"
+            >The nationality of an agent</rdfs:comment>
+        <rdfs:range rdf:resource="&rdfs;Literal"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain rdf:resource="&foaf;Agent"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#prefLabel -->
+
+    <owl:DatatypeProperty rdf:about="&skos;prefLabel">
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain rdf:resource="&skos;Concept"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/name -->
+
+    <owl:DatatypeProperty rdf:about="&foaf;name">
+        <rdfs:label xml:lang="en">name</rdfs:label>
+        <rdfs:label xml:lang="no">navn</rdfs:label>
+        <rdfs:domain rdf:resource="&foaf;Agent"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/title -->
+
+    <owl:DatatypeProperty rdf:about="&foaf;title">
+        <rdfs:label>title</rdfs:label>
+        <rdfs:label xml:lang="no">tittel</rdfs:label>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;anyURI"
+            >http://xmlns.com/foaf/0.1/</rdfs:isDefinedBy>
+        <rdfs:comment
+            >Title (Mr, Mrs, Ms, Dr. etc)</rdfs:comment>
+        <ns:term_status>testing</ns:term_status>
+        <rdfs:domain rdf:resource="&foaf;Agent"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://data.linkedmdb.org/resource/movie/film_genre -->
+
+    <owl:Class rdf:about="&movie;film_genre">
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://lexvo.org/ontology#Language -->
+
+    <owl:Class rdf:about="&ontology3;Language"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/Agent -->
+
+    <owl:Class rdf:about="&terms;Agent">
+        <owl:equivalentClass rdf:resource="&foaf;Agent"/>
+        <skos2:editorialNote xml:lang="en"
+            >BIBO assert that a dcterms:Agent is an equivalent class to foaf:Agent.
+This means that all the individuals belonging to the foaf:Agent class
+also belongs to the dcterms:Agent class. This way, dcterms:contributor
+can be used on foaf:Person, foaf:Organization, foaf:Agent and foaf:Group.
+Even if this link is not done in neither the FOAF nor the DCTERMS ontologies this is a wide spread fact that is asserted by BIBO.</skos2:editorialNote>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/dc/terms/AgentClass -->
+
+    <owl:Class rdf:about="&terms;AgentClass"/>
+    
+
+
+    <!-- http://purl.org/ontology/bibo/Collection -->
+
+    <owl:Class rdf:about="&bibo;Collection">
+        <rdfs:label xml:lang="en">Collection</rdfs:label>
+        <rdfs:label xml:lang="no">Samling</rdfs:label>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;anyURI"
+            >http://purl.org/ontology/bibo/</rdfs:isDefinedBy>
+        <ns:term_status>stable</ns:term_status>
+        <rdfs:comment xml:lang="en"
+            >A collection of Documents or Collections</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ontology/bibo/Document -->
+
+    <owl:Class rdf:about="&bibo;Document">
+        <rdfs:label xml:lang="en">Document</rdfs:label>
+        <rdfs:label xml:lang="no">Dokument</rdfs:label>
+        <owl:equivalentClass rdf:resource="&foaf;Document"/>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;anyURI"
+            >http://purl.org/ontology/bibo/</rdfs:isDefinedBy>
+        <ns:term_status>stable</ns:term_status>
+        <rdfs:comment xml:lang="en"
+            >A document (noun) is a bounded physical representation of body of information designed with the capacity (and usually intent) to communicate. A document may manifest symbolic, diagrammatic or sensory-representational information.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ontology/bibo/DocumentPart -->
+
+    <owl:Class rdf:about="&bibo;DocumentPart">
+        <rdfs:label xml:lang="en">document part</rdfs:label>
+        <rdfs:label xml:lang="no">dokumentdel</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&bibo;Document"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&terms;isPartOf"/>
+                <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;anyURI"
+            >http://purl.org/ontology/bibo/</rdfs:isDefinedBy>
+        <ns:term_status>unstable</ns:term_status>
+        <rdfs:comment xml:lang="en"
+            >a distinct part of a larger document or collected document.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ontology/bibo/Series -->
+
+    <owl:Class rdf:about="&bibo;Series">
+        <rdfs:label xml:lang="en">Series</rdfs:label>
+        <rdfs:label xml:lang="no">Serie</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&bibo;Collection"/>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;anyURI"
+            >http://purl.org/ontology/bibo/</rdfs:isDefinedBy>
+        <ns:term_status>stable</ns:term_status>
+        <rdfs:comment xml:lang="en"
+            >A loose, thematic, collection of Documents, often Books.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.bibpode.no/vocabulary#Audience -->
+
+    <owl:Class rdf:about="&www;vocabulary#Audience">
+        <rdfs:label xml:lang="en">Audience</rdfs:label>
+        <rdfs:label xml:lang="no">M&#229;lgruppe</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&terms;AgentClass"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.bibpode.no/vocabulary#ClassifiationCode -->
+
+    <owl:Class rdf:about="&www;vocabulary#ClassifiationCode">
+        <rdfs:label xml:lang="en"
+            >Classification Code</rdfs:label>
+        <rdfs:label xml:lang="no"
+            >Klassifikasjonskode</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.bibpode.no/vocabulary#DDKCode -->
+
+    <owl:Class rdf:about="&www;vocabulary#DDKCode">
+        <rdfs:label xml:lang="en">DDK</rdfs:label>
+        <rdfs:label xml:lang="no">DDK</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&www;vocabulary#ClassifiationCode"/>
+        <rdfs:comment xml:lang="en"
+            >A classification code from a version of DDK (Deweys desimalklassifikasjon)</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.bibpode.no/vocabulary#LiteraryFormat -->
+
+    <owl:Class rdf:about="&www;vocabulary#LiteraryFormat">
+        <rdfs:label xml:lang="en">Literary format</rdfs:label>
+        <rdfs:label xml:lang="no">Litter&#230;r form</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.bibpode.no/vocabulary#PhysicalFormat -->
+
+    <owl:Class rdf:about="&www;vocabulary#PhysicalFormat">
+        <rdfs:label xml:lang="en">Physical format</rdfs:label>
+        <rdfs:label xml:lang="no">Fysisk form</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.geonames.org/ontology#Feature -->
+
+    <owl:Class rdf:about="&ontology;Feature">
+        <rdfs:label xml:lang="en">Location</rdfs:label>
+        <rdfs:label xml:lang="no">Sted</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#Thing -->
+
+    <owl:Class rdf:about="&owl;Thing"/>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#Concept -->
+
+    <owl:Class rdf:about="&skos;Concept"/>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/Agent -->
+
+    <owl:Class rdf:about="&foaf;Agent">
+        <rdfs:label xml:lang="en">Agent</rdfs:label>
+        <rdfs:label xml:lang="no">Agens</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/Document -->
+
+    <owl:Class rdf:about="&foaf;Document"/>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/Organization -->
+
+    <owl:Class rdf:about="&foaf;Organization">
+        <rdfs:subClassOf rdf:resource="&foaf;Agent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/Person -->
+
+    <owl:Class rdf:about="&foaf;Person">
+        <rdfs:subClassOf rdf:resource="&foaf;Agent"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/dc/terms/hasVersion -->
+
+    <owl:Thing rdf:about="&terms;hasVersion">
+        <rdfs:label xml:lang="en-US">Has Version</rdfs:label>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;anyURI"
+            >http://purl.org/dc/terms/</rdfs:isDefinedBy>
+        <rdfs:comment xml:lang="en-US"
+            >A related resource that is a version, edition, or adaptation of the described resource.</rdfs:comment>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.bibpode.no/ff/a -->
+
+    <owl:Thing rdf:about="&www;ff/a">
+        <rdf:type rdf:resource="&www;vocabulary#PhysicalFormat"/>
+        <rdfs:label xml:lang="no">Kart</rdfs:label>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.bibpode.no/ff/ab -->
+
+    <owl:Thing rdf:about="&www;ff/ab">
+        <rdf:type rdf:resource="&www;vocabulary#PhysicalFormat"/>
+        <rdfs:label xml:lang="no">Atlas</rdfs:label>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.bibpode.no/ff/b -->
+
+    <vocabulary:PhysicalFormat rdf:about="&www;ff/b">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <rdfs:label xml:lang="no">Manuskript</rdfs:label>
+    </vocabulary:PhysicalFormat>
+    
+
+
+    <!-- http://www.bibpode.no/ff/c -->
+
+    <owl:Thing rdf:about="&www;ff/c">
+        <rdf:type rdf:resource="&www;vocabulary#PhysicalFormat"/>
+        <rdfs:label xml:lang="no">Musikktrykk</rdfs:label>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.bibpode.no/ff/da -->
+
+    <vocabulary:PhysicalFormat rdf:about="&www;ff/da">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <rdfs:label xml:lang="no">Grammofonplate</rdfs:label>
+    </vocabulary:PhysicalFormat>
+    
+
+
+    <!-- http://www.bibpode.no/ff/db -->
+
+    <vocabulary:PhysicalFormat rdf:about="&www;ff/db">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <rdfs:label xml:lang="no">Lydkasett</rdfs:label>
+    </vocabulary:PhysicalFormat>
+    
+
+
+    <!-- http://www.bibpode.no/ff/dc -->
+
+    <owl:Thing rdf:about="&www;ff/dc">
+        <rdf:type rdf:resource="&www;vocabulary#PhysicalFormat"/>
+        <rdfs:label xml:lang="no">CD-plate</rdfs:label>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.bibpode.no/ff/dd -->
+
+    <owl:Thing rdf:about="&www;ff/dd">
+        <rdf:type rdf:resource="&www;vocabulary#PhysicalFormat"/>
+        <rdfs:label xml:lang="no">Digibok</rdfs:label>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.bibpode.no/ff/dg -->
+
+    <owl:Thing rdf:about="&www;ff/dg">
+        <rdf:type rdf:resource="&www;vocabulary#PhysicalFormat"/>
+        <rdfs:label xml:lang="no"
+            >Lydopptak - musikk</rdfs:label>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.bibpode.no/ff/dh -->
+
+    <vocabulary:PhysicalFormat rdf:about="&www;ff/dh">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <rdfs:label xml:lang="no"
+            >Lydopptak - spr&#229;kkurs</rdfs:label>
+    </vocabulary:PhysicalFormat>
+    
+
+
+    <!-- http://www.bibpode.no/ff/di -->
+
+    <owl:Thing rdf:about="&www;ff/di">
+        <rdf:type rdf:resource="&www;vocabulary#PhysicalFormat"/>
+        <rdfs:label xml:lang="no">Lydbok</rdfs:label>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.bibpode.no/ff/dj -->
+
+    <owl:Thing rdf:about="&www;ff/dj">
+        <rdf:type rdf:resource="&www;vocabulary#PhysicalFormat"/>
+        <rdfs:label xml:lang="no"
+            >Lydopptak - annen tale, annet</rdfs:label>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.bibpode.no/ff/dk -->
+
+    <vocabulary:PhysicalFormat rdf:about="&www;ff/dk">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <rdfs:label xml:lang="no">Kombidokument</rdfs:label>
+    </vocabulary:PhysicalFormat>
+    
+
+
+    <!-- http://www.bibpode.no/ff/dz -->
+
+    <vocabulary:PhysicalFormat rdf:about="&www;ff/dz">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <rdfs:label xml:lang="no">Lydopptak - mp3</rdfs:label>
+    </vocabulary:PhysicalFormat>
+    
+
+
+    <!-- http://www.bibpode.no/ff/ed -->
+
+    <owl:Thing rdf:about="&www;ff/ed">
+        <rdf:type rdf:resource="&www;vocabulary#PhysicalFormat"/>
+        <rdfs:label xml:lang="no">Videokasett</rdfs:label>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.bibpode.no/ff/ee -->
+
+    <owl:Thing rdf:about="&www;ff/ee">
+        <rdf:type rdf:resource="&www;vocabulary#PhysicalFormat"/>
+        <rdfs:label xml:lang="no">DVD-plate</rdfs:label>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.bibpode.no/ff/fd -->
+
+    <owl:Thing rdf:about="&www;ff/fd">
+        <rdf:type rdf:resource="&www;vocabulary#PhysicalFormat"/>
+        <rdfs:label xml:lang="no">Dias</rdfs:label>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.bibpode.no/ff/ff -->
+
+    <vocabulary:PhysicalFormat rdf:about="&www;ff/ff">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <rdfs:label xml:lang="no">Fotografi</rdfs:label>
+    </vocabulary:PhysicalFormat>
+    
+
+
+    <!-- http://www.bibpode.no/ff/fm -->
+
+    <owl:Thing rdf:about="&www;ff/fm">
+        <rdf:type rdf:resource="&www;vocabulary#PhysicalFormat"/>
+        <rdfs:label xml:lang="no">Plansje</rdfs:label>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.bibpode.no/ff/gb -->
+
+    <owl:Thing rdf:about="&www;ff/gb">
+        <rdf:type rdf:resource="&www;vocabulary#PhysicalFormat"/>
+        <rdfs:label xml:lang="no">Diskett</rdfs:label>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.bibpode.no/ff/gc -->
+
+    <owl:Thing rdf:about="&www;ff/gc">
+        <rdf:type rdf:resource="&www;vocabulary#PhysicalFormat"/>
+        <rdfs:label xml:lang="no">DVD-ROM</rdfs:label>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.bibpode.no/ff/gd -->
+
+    <owl:Thing rdf:about="&www;ff/gd">
+        <rdf:type rdf:resource="&www;vocabulary#PhysicalFormat"/>
+        <rdfs:label xml:lang="no">CD-ROM</rdfs:label>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.bibpode.no/ff/ge -->
+
+    <vocabulary:PhysicalFormat rdf:about="&www;ff/ge">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <rdfs:label xml:lang="no">Nettressurs</rdfs:label>
+    </vocabulary:PhysicalFormat>
+    
+
+
+    <!-- http://www.bibpode.no/ff/gg -->
+
+    <owl:Thing rdf:about="&www;ff/gg">
+        <rdf:type rdf:resource="&www;vocabulary#PhysicalFormat"/>
+        <rdfs:label xml:lang="no">Blue-ray-ROM</rdfs:label>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.bibpode.no/ff/gi -->
+
+    <vocabulary:PhysicalFormat rdf:about="&www;ff/gi">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <rdfs:label xml:lang="no">Wii-plate</rdfs:label>
+    </vocabulary:PhysicalFormat>
+    
+
+
+    <!-- http://www.bibpode.no/ff/h -->
+
+    <owl:Thing rdf:about="&www;ff/h">
+        <rdf:type rdf:resource="&www;vocabulary#PhysicalFormat"/>
+        <rdfs:label xml:lang="no"
+            >Tredimensjonal gjenstand</rdfs:label>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.bibpode.no/ff/ib -->
+
+    <owl:Thing rdf:about="&www;ff/ib">
+        <rdf:type rdf:resource="&www;vocabulary#PhysicalFormat"/>
+        <rdfs:label xml:lang="no">Mikrofilmspole</rdfs:label>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.bibpode.no/ff/ic -->
+
+    <owl:Thing rdf:about="&www;ff/ic">
+        <rdf:type rdf:resource="&www;vocabulary#PhysicalFormat"/>
+        <rdfs:label xml:lang="no">Mikrofilmkort</rdfs:label>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.bibpode.no/ff/j -->
+
+    <owl:Thing rdf:about="&www;ff/j">
+        <rdf:type rdf:resource="&www;vocabulary#PhysicalFormat"/>
+        <rdfs:label xml:lang="no">Periodika</rdfs:label>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.bibpode.no/ff/l -->
+
+    <owl:Thing rdf:about="&www;ff/l">
+        <rdf:type rdf:resource="&www;vocabulary#PhysicalFormat"/>
+        <rdfs:label xml:lang="no">Bok</rdfs:label>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.bibpode.no/ff/ma -->
+
+    <owl:Thing rdf:about="&www;ff/ma">
+        <rdf:type rdf:resource="&www;vocabulary#PhysicalFormat"/>
+        <rdfs:label xml:lang="no">Dataspill - PC</rdfs:label>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.bibpode.no/ff/mb -->
+
+    <owl:Thing rdf:about="&www;ff/mb">
+        <rdf:type rdf:resource="&www;vocabulary#PhysicalFormat"/>
+        <rdfs:label xml:lang="no"
+            >Dataspill - Playstation 2</rdfs:label>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.bibpode.no/ff/mc -->
+
+    <owl:Thing rdf:about="&www;ff/mc">
+        <rdf:type rdf:resource="&www;vocabulary#PhysicalFormat"/>
+        <rdfs:label xml:lang="no"
+            >Dataspill - Playstation 3</rdfs:label>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.bibpode.no/ff/mj -->
+
+    <vocabulary:PhysicalFormat rdf:about="&www;ff/mj">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <rdfs:label xml:lang="no"
+            >Dataspill - Xbox 360</rdfs:label>
+    </vocabulary:PhysicalFormat>
+    
+
+
+    <!-- http://www.bibpode.no/ff/mn -->
+
+    <owl:Thing rdf:about="&www;ff/mn">
+        <rdf:type rdf:resource="&www;vocabulary#PhysicalFormat"/>
+        <rdfs:label xml:lang="no"
+            >Dataspill - Nintendo DS</rdfs:label>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.bibpode.no/ff/mo -->
+
+    <owl:Thing rdf:about="&www;ff/mo">
+        <rdf:type rdf:resource="&www;vocabulary#PhysicalFormat"/>
+        <rdfs:label xml:lang="no">Nintendo Wii</rdfs:label>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.bibpode.no/lf/0 -->
+
+    <vocabulary:LiteraryFormat rdf:about="&www;lf/0">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <rdfs:label xml:lang="no">Faglitteratur</rdfs:label>
+    </vocabulary:LiteraryFormat>
+    
+
+
+    <!-- http://www.bibpode.no/lf/1 -->
+
+    <owl:Thing rdf:about="&www;lf/1">
+        <rdf:type rdf:resource="&www;vocabulary#LiteraryFormat"/>
+        <rdfs:label xml:lang="no"
+            >Skj&#248;nnlitteratur</rdfs:label>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.bibpode.no/lf/a -->
+
+    <owl:Thing rdf:about="&www;lf/a">
+        <rdf:type rdf:resource="&www;vocabulary#LiteraryFormat"/>
+        <rdfs:label xml:lang="no">Antologi</rdfs:label>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.bibpode.no/lf/b -->
+
+    <vocabulary:LiteraryFormat rdf:about="&www;lf/b">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <rdfs:label xml:lang="no">Bildebok</rdfs:label>
+    </vocabulary:LiteraryFormat>
+    
+
+
+    <!-- http://www.bibpode.no/lf/d -->
+
+    <vocabulary:LiteraryFormat rdf:about="&www;lf/d">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <rdfs:label xml:lang="no">Dikt</rdfs:label>
+    </vocabulary:LiteraryFormat>
+    
+
+
+    <!-- http://www.bibpode.no/lf/l -->
+
+    <owl:Thing rdf:about="&www;lf/l">
+        <rdf:type rdf:resource="&www;vocabulary#LiteraryFormat"/>
+        <rdfs:label xml:lang="no">L&#230;rebok</rdfs:label>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.bibpode.no/lf/n -->
+
+    <vocabulary:LiteraryFormat rdf:about="&www;lf/n">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <rdfs:label xml:lang="no"
+            >Novelle/fortelling</rdfs:label>
+    </vocabulary:LiteraryFormat>
+    
+
+
+    <!-- http://www.bibpode.no/lf/p -->
+
+    <owl:Thing rdf:about="&www;lf/p">
+        <rdf:type rdf:resource="&www;vocabulary#LiteraryFormat"/>
+        <rdfs:label xml:lang="no">Pekebok</rdfs:label>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.bibpode.no/lf/r -->
+
+    <owl:Thing rdf:about="&www;lf/r">
+        <rdf:type rdf:resource="&www;vocabulary#LiteraryFormat"/>
+        <rdfs:label xml:lang="no">Roman</rdfs:label>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.bibpode.no/lf/s -->
+
+    <owl:Thing rdf:about="&www;lf/s">
+        <rdf:type rdf:resource="&www;vocabulary#LiteraryFormat"/>
+        <rdfs:label xml:lang="no">Skuespill</rdfs:label>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.bibpode.no/lf/t -->
+
+    <owl:Thing rdf:about="&www;lf/t">
+        <rdf:type rdf:resource="&www;vocabulary#LiteraryFormat"/>
+        <rdfs:label xml:lang="no">Tegneserie</rdfs:label>
+    </owl:Thing>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 2.2.1.1138) http://owlapi.sourceforge.net -->
+
